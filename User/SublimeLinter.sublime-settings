@@ -1,0 +1,41 @@
+// SublimeLinter Settings - User
+{
+    "debug": true,
+
+    "styles": [
+        {
+            "icon": "Packages/LSP/icons/info.png",
+            "types": ["info"],
+            "scope": "region.bluish markup.info.sublime_linter",
+            "mark_style": "outline",
+            "priority": 1,
+        },
+        {
+            "icon": "Packages/LSP/icons/warning.png",
+            "types": ["warning"],
+            "scope": "region.yellowish markup.warning.sublime_linter",
+            "mark_style": "outline",
+            "priority": 2,
+        },
+        {
+            "icon": "Packages/LSP/icons/error.png",
+            "types": ["error"],
+            "scope": "region.redish markup.error.sublime_linter",
+            "mark_style": "outline",
+            "priority": 3,
+        }
+    ],
+
+    "linters": {
+        // "noendingnewline" : {"disable" : true},
+        // "bannedcharacters" : {"disable" : true},
+        // "noreturntype" : {"disable" : true},
+        // "trailingspaces" : {"disable" : true},
+        "annotations" : {
+            // "disable": true,
+            "errors" : ["TODO", "FIX THIS", "FIX ME", "WIP", "ERROR", "FIXME"],
+            "warnings" : ["DO NOT CHANGE", "DO NOT", "DOES NOT WORK", "DOES NOT", "NOT WORKING", "WARNING", "OBS", "NB"],
+            "infos": ["NOTE", "README", "INFO", "CHANGE THIS", "READ ME"],
+        }
+    }
+}

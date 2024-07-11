@@ -1,30 +1,28 @@
-This is a template. For "how to make a linter", please check [the HOWTO](HOWTO.md).
 
------------------------------------------------------------------
 
-SublimeLinter-contrib-__linter__
+SublimeLinter self-contained plugin collection
 ================================
 
-[![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-__linter__.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-__linter__)
 
-This linter plugin for [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter) provides an interface to [__linter__](__linter_homepage__). It will be used with files that have the “__syntax__” syntax.
+A collection of simple self-contained plugins for [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter), that each use a single Regular Expression to find areas of interest in tabs with Python syntax. They do not connect SublimeLinter to an external linter, all logic is described in each plugin's `linter.py`.
+The idea is to keep the plugins simple, readable, and easy to modify rather than efficient.
 
-## Installation
-SublimeLinter must be installed in order to use this plugin. 
+Many thanks to my co-author, ChatGPT, who wrote some of the Regular Expressions, and helped write much of the `find_errors` function. We both borrowed heavily from the only self-contained SublimeLinter plugin that I could find on the internet, the lovely [SublimeLinter-annotations](https://github.com/SublimeLinter/SublimeLinter-annotations) package.
 
+
+### Dependencies
+SublimeLinter must be installed in order to use these plugins.
 Please use [Package Control](https://packagecontrol.io) to install the linter plugin.
 
-Before installing this plugin, you must ensure that `__linter__` is installed on your system.
+##### SublimeLinter.sublime-settings
+The optional SublimeLinter settings file links to icons in the [LSP package](https://github.com/sublimelsp/LSP), which will fail to load if the package is not installed.
 
-In order for `__linter__` to be executed by SublimeLinter, you must ensure that its path is available to SublimeLinter. The docs cover [troubleshooting PATH configuration](http://sublimelinter.readthedocs.io/en/latest/troubleshooting.html#finding-a-linter-executable).
 
-## Settings
-- SublimeLinter settings: http://sublimelinter.readthedocs.org/en/latest/settings.html
-- Linter settings: http://sublimelinter.readthedocs.org/en/latest/linter_settings.html
+### Installation
+To use the plugins, simply copy each folder to your Sublime Text `Packages` folder.
+On Linux systems, this folder is typically located at `~/.config/sublime-text/Packages/`.
 
-Additional SublimeLinter-__linter__ settings:
+Note that the SublimeLinter package only looks for linters one level below the `Packages` folder.
+That is, it will find a linter located at `Packages/SublimeLinter-mylinter/linter.py`,
+but not one located at `Packages/myfolder/SublimeLinter-mylinter/linter.py`.
 
-|Setting|Description    |
-|:------|:--------------|
-|foo    |Something.     |
-|bar    |Something else.|
