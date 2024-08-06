@@ -1,6 +1,6 @@
 
 import re
-from collections.abc import Iterator
+from typing import Iterator, Iterable
 from SublimeLinter.lint import PythonLinter, LintMatch
 
 class NoEndingNewline(PythonLinter):

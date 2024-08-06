@@ -31,10 +31,13 @@
         // "bannedcharacters" : {"disable" : true},
         // "noreturntype" : {"disable" : true},
         // "trailingspaces" : {"disable" : true},
+        "deprecatedtypingimports" : {"disable" : true},
+        // "invalidindent" : {"disable": true},
+        // "colonspacing" : {"disable": true},
         "annotations" : {
             // "disable": true,
-            "errors" : ["TODO", "FIX THIS", "FIX ME", "WIP", "ERROR", "FIXME"],
-            "warnings" : ["DO NOT CHANGE", "DO NOT", "DOES NOT WORK", "DOES NOT", "NOT WORKING", "WARNING", "OBS", "NB"],
+            "errors" : ["FIX THIS", "FIX ME", "WIP", "ERROR", "FIXME", "URGENT", "WARNING!", "!!!"],
+            "warnings" : ["TODO CHECK", "TODO CONFIRM", "TODO", "CONFIRM", "DO NOT CHANGE", "DO NOT", "DOES NOT WORK", "DOES NOT", "NOT WORKING", "WARNING", "OBS", "NB", "IMPORTANT", "CHECK"],
             "infos": ["NOTE", "README", "INFO", "CHANGE THIS", "READ ME"],
         }
     }

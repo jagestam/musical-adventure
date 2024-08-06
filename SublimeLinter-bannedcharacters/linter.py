@@ -1,6 +1,6 @@
 
 import re
-from collections.abc import Iterator
+from typing import Iterator, Iterable
 from SublimeLinter.lint import PythonLinter, LintMatch
 
 class BannedCharacters(PythonLinter):
@@ -28,9 +28,9 @@ class BannedCharacters(PythonLinter):
 
             # Ignore everything between the first '#' on each line and the end of the line
             # Replaces all comments with whitespaces of same length
-            lines : Iterable[str] = region_text.split('\n')
-            processed_lines : Iterable[str] = (line.split('#',maxsplit=1)[0].ljust(len(line)) if '#' in line else line for line in lines)
-            processed_text : str = '\n'.join(processed_lines)
+            lines: Iterable[str] = region_text.split('\n')
+            processed_lines: Iterable[str] = (line.split('#',maxsplit=1)[0].ljust(len(line)) if '#' in line else line for line in lines)
+            processed_text: str = '\n'.join(processed_lines)
 
             matches = mark_regex.finditer(processed_text)
             for match in matches:

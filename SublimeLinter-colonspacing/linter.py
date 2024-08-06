@@ -3,21 +3,21 @@ import re
 from typing import Iterator, Iterable
 from SublimeLinter.lint import PythonLinter, LintMatch
 
-class TrailingSpaces(PythonLinter):
-    """Discovers and marks trailing spaces."""
+class ColonSpacing(PythonLinter):
+    """Marks spacing on both side of colon."""
 
     cmd = None
     multiline = True
 
     # Define your specific regex pattern here
-    regex_pattern = r'[ \t]+\n'
+    regex_pattern = r' \: '
 
     defaults = {
         'selector': 'source.python',
     }
 
     def run(self, cmd, code) -> str:
-        return 'TrailingSpaces: something so SublimeLinter will not assume this view to be OK.'
+        return 'ColonSpacing: something so SublimeLinter will not assume this view to be OK.'
 
     def find_errors(self, output) -> Iterator[LintMatch]:
         mark_regex = re.compile(self.regex_pattern, re.MULTILINE)
@@ -35,6 +35,6 @@ class TrailingSpaces(PythonLinter):
                     col=col,
                     near=match.group(),
                     error_type='info',
-                    code='Trailing whitespace',
-                    message='Trailing whitespace(s).'
+                    code='Inconsistent spacing',
+                    message='Inconsistent spacing around colon. Write ": " not " : "'
                 )

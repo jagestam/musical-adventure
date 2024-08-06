@@ -4,11 +4,11 @@ SublimeLinter self-contained plugin collection
 ================================
 
 
-A collection of simple self-contained plugins for [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter), that each use a single Regular Expression to find areas of interest in tabs with Python syntax. They do not connect SublimeLinter to an external linter, all logic is described in each plugin's `linter.py`.
+A collection of simple self-contained plugins for [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter), that each check Python files for compliance with a single rule, either through Regular Expressions or the Python `tokenize` module.
+They do not connect SublimeLinter to an external linter, all logic is described in each plugin's `linter.py`.
 The idea is to keep the plugins simple, readable, and easy to modify rather than efficient.
 
-Many thanks to my co-author, ChatGPT, who wrote some of the Regular Expressions, and helped write much of the `find_errors` function. We both borrowed heavily from the only self-contained SublimeLinter plugin that I could find on the internet, the lovely [SublimeLinter-annotations](https://github.com/SublimeLinter/SublimeLinter-annotations) package.
-
+Many thanks to my co-author, ChatGPT, and also to the author of the only self-contained SublimeLinter plugin that I could find on the internet, the lovely [SublimeLinter-annotations](https://github.com/SublimeLinter/SublimeLinter-annotations) package, which helped me get started.
 
 ### Dependencies
 SublimeLinter must be installed in order to use these plugins.
